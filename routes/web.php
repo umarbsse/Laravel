@@ -36,4 +36,4 @@ Route::view('url_about/{name}','urls.about');
 
 
 
-Route::view('home/profile/umer/ali','urls.named_routes');
+Route::view('home/profile/umer/ali','urls.named_routes')->name('hm');

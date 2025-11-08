@@ -13,5 +13,8 @@
         <x-message_banner msg="User logined success" class="success" /> <br>
         <x-message_banner msg="Auth Failed" class="error" /> <br>
         <x-message_banner msg="Weak Password" class="warning" />
+
+
+        <a href="{{route('hm')}}">Named route home page</a>
     </div>
 @include('widgets.footer')
