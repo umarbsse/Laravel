@@ -5,6 +5,7 @@ use App\Http\Controllers\Home;
 use App\Http\Controllers\Signup;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\FormHandle;
+use App\Http\Controllers\Named_routes;
 
 
 // Route::get('/', function () {
@@ -37,3 +38,8 @@ Route::view('url_about/{name}','urls.about');
 
 
 Route::view('home/profile/umer/ali','urls.named_routes')->name('hm');
+Route::view('home/profile/{name}','urls.named_routes')->name('user');
+
+
+Route::get('show',[Named_routes::class,'show']);
+Route::get('user',[Named_routes::class,'user']);

@@ -16,5 +16,7 @@
 
 
         <a href="{{route('hm')}}">Named route home page</a>
+
+        <a href="home/profile/umer">go to umer profile</a>
     </div>
 @include('widgets.footer')
