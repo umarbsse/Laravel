@@ -33,3 +33,7 @@ Route::post('addUser', [FormHandle::class, 'addUser']);
 Route::view('url_home','urls.home');
 Route::view('url_about','urls.about');
 Route::view('url_about/{name}','urls.about');
+
+
+
+Route::view('home/profile/umer/ali','urls.named_routes');
