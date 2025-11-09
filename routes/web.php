@@ -7,6 +7,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\FormHandle;
 use App\Http\Controllers\Named_routes;
 use App\Http\Controllers\Student;
+use App\Http\Controllers\Employee;
 
 
 // Route::get('/', function () {
@@ -60,6 +61,26 @@ Route::prefix('student')->group(function(){
     Route::view('/home','student.home');
     Route::get('/list',[Student::class,'list']);
     Route::get('/add',[Student::class,'add']);
+});
+
+###################################
+### Route group with controller ###
+###################################
+
+// Route::get('list_emp',[Employee::class,'list']);   //OLD WAY OF DOING THAT
+// Route::get('add_emp',[Employee::class,'add']);
+// Route::get('delete_emp',[Employee::class,'delete']);
+
+
+//Pass paramets in route controller
+//Route::get('about_emp/{name}',[Employee::class,'about']);
+
+Route::controller(Employee::class)->group(function(){
+    Route::get('list_emp','list');
+    Route::get('add_emp','add');
+    Route::get('delete_emp','delete');
+    
+    Route::get('about_emp/{name}','about');
 });
 
 
