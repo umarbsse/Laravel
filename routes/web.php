@@ -8,6 +8,7 @@ use App\Http\Controllers\FormHandle;
 use App\Http\Controllers\Named_routes;
 use App\Http\Controllers\Student;
 use App\Http\Controllers\Employee;
+use App\Http\Controllers\Dashboard;
 
 
 // Route::get('/', function () {
@@ -84,3 +85,16 @@ Route::controller(Employee::class)->group(function(){
 });
 
 
+###################################
+### Group Middleware route      ###
+###################################
+
+// Route::get('dashboard',[Dashboard::class,'index'])->middleware('middleware_country_age_check');
+// Route::get('dashboard/setting',[Dashboard::class,'setting'])->middleware('middleware_country_age_check');
+ Route::get('dashboard/readme',[Dashboard::class,'readme']);
+
+
+Route::middleware("middleware_country_age_check")->group(function(){
+    Route::get('dashboard',[Dashboard::class,'index']);
+    Route::get('dashboard/setting',[Dashboard::class,'setting']);
+});
