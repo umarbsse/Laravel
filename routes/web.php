@@ -6,6 +6,7 @@ use App\Http\Controllers\Signup;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\FormHandle;
 use App\Http\Controllers\Named_routes;
+use App\Http\Controllers\Student;
 
 
 // Route::get('/', function () {
@@ -43,3 +44,22 @@ Route::view('home/profile/{name}','urls.named_routes')->name('user');
 
 Route::get('show',[Named_routes::class,'show']);
 Route::get('user',[Named_routes::class,'user']);
+
+
+
+############################
+## Route group with prefix #
+############################
+// Route::view('student/home','student.home');
+// Route::get('student/list',[Student::class,'list']);
+// Route::get('student/add',[Student::class,'add']);
+
+// Merg same class route into prefix groups etc
+
+Route::prefix('student')->group(function(){
+    Route::view('/home','student.home');
+    Route::get('/list',[Student::class,'list']);
+    Route::get('/add',[Student::class,'add']);
+});
+
+
