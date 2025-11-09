@@ -15,6 +15,16 @@ class AgeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
+        //echo "<pre>";
+        //print_r($request->age);
+        //echo "</pre>";
+        if ($request->age<18) {
+            //die("You can not visit this site");
+            return response()->view('middleware.stop');
+
+        }
+        //print_r($request);
+        //echo "<h1>From AgeCheck middleware</h1>"."<br/>";
         return $next($request);
     }
 }
