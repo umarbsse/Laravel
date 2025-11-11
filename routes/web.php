@@ -10,6 +10,7 @@ use App\Http\Controllers\Student;
 use App\Http\Controllers\Employee;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\User;
+use App\Http\Controllers\Students;
 
 
 // Route::get('/', function () {
@@ -103,3 +104,6 @@ Route::middleware("middleware_country_age_check")->group(function(){
 
 Route::get('users',[User::class,'users']);
 Route::get('users/list',[User::class,'list']);
+
+
+Route::get('students',[Students::class,'getStudents']);
