@@ -102,3 +102,4 @@ Route::middleware("middleware_country_age_check")->group(function(){
 
 
 Route::get('users',[User::class,'users']);
+Route::get('users/list',[User::class,'list']);
