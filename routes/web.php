@@ -9,6 +9,7 @@ use App\Http\Controllers\Named_routes;
 use App\Http\Controllers\Student;
 use App\Http\Controllers\Employee;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\User;
 
 
 // Route::get('/', function () {
@@ -98,3 +99,6 @@ Route::middleware("middleware_country_age_check")->group(function(){
     Route::get('dashboard',[Dashboard::class,'index']);
     Route::get('dashboard/setting',[Dashboard::class,'setting']);
 });
+
+
+Route::get('users',[User::class,'users']);
