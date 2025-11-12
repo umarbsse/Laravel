@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Students;
 use App\Http\Controllers\Api;
+use App\Http\Controllers\Setting;
 
 
 // Route::get('/', function () {
@@ -110,3 +111,9 @@ Route::get('users/list',[User::class,'list']);
 Route::get('students',[Students::class,'getStudents']);
 
 Route::get('api',[Api::class,'index']);
+
+Route::get('setting',[Setting::class,'queries']);
+Route::get('setting_insert',[Setting::class,'insert']);
+Route::get('setting_update',[Setting::class,'update']);
+Route::get('setting_delete',[Setting::class,'delete']);
+
